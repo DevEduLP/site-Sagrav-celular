@@ -1,0 +1,179 @@
+/* Resetando alguns estilos padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('images/InShot_20250305_101445569.jpg');
+    background-size: cover; /* A imagem cobrirá toda a tela */
+    background-position: center center; /* Centraliza a imagem */
+    background-attachment: fixed; /* A imagem ficará fixa ao rolar a página */
+    color: white; /* Garante que o texto seja legível */
+}
+
+/* Estilo do Header */
+header {
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 20px; /* Ajusta o espaçamento interno do header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Garante que o header ocupe toda a largura */
+    height: 135px; /* Define uma altura fixa para o header */
+}
+
+header .logo-container img {
+    width: 150px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: #fff; /* Cor do texto em branco */
+    text-decoration: none;
+    font-size: 18px;
+}
+
+header nav ul li a:hover {
+    color: #ccc; /* Cor do texto ao passar o mouse */
+}
+
+/* Estilo da seção da discografia */
+#discografia {
+    width: 80%;
+    max-width: 1200px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+#discografia h2 {
+    font-size: 32px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* Grid de álbuns */
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.album-item {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+.album-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.album-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.5);
+}
+
+.album-item .album-info {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.album-item .album-info h2 {
+    font-size: 24px;
+    color: #fff;
+}
+
+.album-item .album-info p {
+    font-size: 16px;
+    color: #fff;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1024px) {
+    .album-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header h1 {
+        font-size: 24px; /* Ajuste do título para telas menores */
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .album-grid {
+        grid-template-columns: 1fr; /* Para dispositivos menores, usamos uma coluna */
+    }
+
+    header {
+        padding: 10px 15px; /* Ajustando o padding do header */
+    }
+
+    header .logo-container img {
+        width: 120px; /* Ajuste para o logo em telas menores */
+    }
+
+    header nav ul {
+        text-align: center; /* Para centralizar os links */
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 10px 0; /* Espaçamento para os itens do menu */
+    }
+
+    #discografia h2 {
+        font-size: 28px; /* Ajustando o título para telas menores */
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        background-size: cover; /* Ajuste do background para telas muito pequenas */
+    }
+    
+    header .logo-container img {
+        width: 100px; /* Reduzindo ainda mais o tamanho do logo */
+    }
+
+    header nav ul li {
+        margin: 8px 0; /* Menor espaçamento entre os links no menu */
+    }
+
+    #discografia h2 {
+        font-size: 24px; /* Reduzindo o título para telas muito pequenas */
+    }
+
+    .album-item .album-info h2 {
+        font-size: 20px; /* Reduzindo o título dos álbuns */
+    }
+
+    .album-item .album-info p {
+        font-size: 14px; /* Ajustando o tamanho da descrição */
+    }
+}

@@ -1,0 +1,265 @@
+/* Geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Kardust TS Condensed';
+    src: url('fonts/kardust-ts-condensed-bold.woff') format('woff'),
+         url('fonts/kardust-ts-condensed-bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Corpo da página */
+body {
+    background-image: url('images/banda\ circulo.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Kardust TS Condensed', sans-serif;
+    color: white;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: 135px;
+    background-color: #000000; /* Fundo do header também escuro */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: top 0.3s ease;
+}
+header.hidden {
+    top: -150px;
+}
+
+/* Logo */
+header .logo img {
+    width: 150px;
+}
+
+/* Navegação */
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f39c12; /* Cor de destaque no hover */
+}
+
+/* Menu Hambúrguer */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle .bar {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+}
+
+/* Seção de biografia */
+#biografia {
+    padding: 40px;
+}
+
+#biografia h1 {
+    font-family: 'Kardust TS Condensed', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+#biografia p {
+    font-family: 'Kardust TS Condensed', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Ajustes para a seção de notícias */
+#noticias header {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative; /* Corrigindo o comportamento do título */
+    z-index: 10; /* Garante que o título esteja acima de outros elementos */
+}
+
+#noticias .noticias-header h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+/* Certifique-se de que as notícias fiquem uma por linha */
+/* Ajustes para a seção de notícias */
+.noticias-container {
+    display: flex;
+    flex-direction: column; /* Coloca as notícias em linha */
+    gap: 20px;
+}
+
+.noticia {
+    width: 80%; /* Diminuir o tamanho para 80% da largura do container */
+    margin: 0 auto 20px auto; /* Centraliza as notícias */
+    text-align: left;
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: hsl(0, 0%, 0%);
+}
+
+.noticia img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border-bottom: 2px solid red;
+}
+
+.noticia h3 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.noticia p {
+    font-size: 14px;
+    color: #a5a2a2;
+}
+
+.noticia a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.noticia a:hover {
+    text-decoration: underline;
+}
+
+
+/* Formulário de Contato */
+#contato {
+    padding: 40px;
+    background-color: #000000; /* Fundo da seção */
+    opacity: 18.5;
+}
+
+#contato h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#contato form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contato textarea {
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    background-color: #000000;
+    color: white;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    resize: none;
+}
+
+#contato button {
+    padding: 10px;
+    background-color: #831906;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#contato button:hover {
+    background-color: #5a0404;
+}
+
+/* Seção de Redes Sociais */
+#redes-sociais {
+    text-align: center;
+    padding: 40px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Centraliza os itens */
+    align-items: center;
+    gap: 20px; /* Espaçamento entre os ícones */
+}
+
+.social-icons a {
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #111111;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+footer a {
+    color: #bb0303;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav.active ul {
+        display: flex;
+    }
+}
